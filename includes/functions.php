@@ -1,16 +1,8 @@
 <?php
 
-function test() {
-    add_thickbox();
-    ob_start();
-    include_once ( UI_PLUGIN_DIR . '/templates/test.php');
-    $content = ob_get_contents();
-    ob_end_clean();
-
-    echo $content;
-
+function user_ideas_init_widget(){
+    register_widget( 'User_Ideas_Widget' );
 }
 
-function test2() {
-    echo plugin_dir_path(__FILE__);
-}
+
+

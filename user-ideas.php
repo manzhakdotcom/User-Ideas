@@ -7,11 +7,12 @@
  * Version:     0.0.1
  * Author:      Manzhak
  * Author URI:  http://manzhak.com
+ * Text Domain: user-ideas
  */
 
 if( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'UI_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+define( 'USER_IDEAS_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 if( !class_exists( 'UserIdeas' ) ):
 
@@ -70,17 +71,18 @@ if( !class_exists( 'UserIdeas' ) ):
 		private function includes()
 		{
 			require( $this->includes_dir . 'functions.php' );
+			require( $this->includes_dir . 'widget.php' );
 		}
 
 		private function actions()
 		{
-		    add_action( 'admin_notices', 'test' );
+            add_action( 'widgets_init', 'user_ideas_init_widget');
 		}
 
 	}
 
 
-	//
+	//Start!
 	UserIdeas::get_instance();
 
 endif;
