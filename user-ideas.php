@@ -29,7 +29,7 @@ if( !class_exists( 'UserIdeas' ) ):
 		}
 
 
-		//
+		//Singleton
 		public static function get_instance()
 		{
 			if( null == self::$instance )
@@ -41,6 +41,7 @@ if( !class_exists( 'UserIdeas' ) ):
 			return self::$instance;
 		}
 
+		//Init plugin
 		private function init()
 		{
 			self::$instance->setup();
@@ -72,6 +73,7 @@ if( !class_exists( 'UserIdeas' ) ):
 		{
 			require( $this->includes_dir . 'functions.php' );
 			require( $this->includes_dir . 'widget.php' );
+			require( $this->includes_dir . 'options.php' );
 		}
 
 		private function actions()
